@@ -14,7 +14,7 @@ import {
 import './AzureMap.css'
 import "azure-maps-control/dist/atlas.min.css";
 import "@mapbox/mapbox-gl-draw/dist/mapbox-gl-draw.css";
-
+const key = process.env.REACT_APP_AZURE_MAPS_KEY;
 export default function AzureMap({area, setArea, data, setData}) {
   const mapRef = useRef(null);
   const drawRef = useRef(null);
@@ -22,11 +22,11 @@ export default function AzureMap({area, setArea, data, setData}) {
   const [searchText, setSearchText] = useState("");
   const [suggestions, setSuggestions] = useState([]);
   const [isInfoExpanded, setIsInfoExpanded] = useState(true);
-  const subscriptionKey = "4zA3TK3uufsbOPoZqCycWw64TyhokXGaSBmG48CADWTJTsaNVdxBJQQJ99BIACYeBjFRNQJUAAAgAZMP3RLO";
-  
-  useEffect(()=>{ 
-    console.log(area); 
-  },[area]); 
+  const subscriptionKey = key;
+
+  useEffect(() => {
+    console.log(area);
+  }, [area]);
    
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(
