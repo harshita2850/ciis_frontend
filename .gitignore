@@ -24,3 +24,12 @@ dist-ssr
 *.sw?
 .env
 
+
+./Rubbish 
+# .env 
+Rubbish
+.vscode
+.venv
+__pycache__
+
+
